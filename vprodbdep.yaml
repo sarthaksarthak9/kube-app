@@ -1,5 +1,5 @@
 apiVersion: app/v1
-kind: Depolyment
+kind: Deployment
 metadata:
   name: vprodb
   labels:
@@ -28,7 +28,7 @@ spec:
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
-                secretkeyRef:
+                secretKeyRef:
                   name: app-secret
                   key: db-pass
       nodeSelector:
